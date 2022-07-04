@@ -1,7 +1,5 @@
 package com.shop.entity;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -23,7 +21,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Item {
+public class Item extends BaseEntity {
 	@Id
 	@Column(name="item_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -44,7 +42,4 @@ public class Item {
 	
 	@Enumerated(EnumType.STRING)
 	private ItemSellStatus itemSellStatus;
-	
-	private LocalDateTime regTime;
-	private LocalDateTime updateTime;
 }
